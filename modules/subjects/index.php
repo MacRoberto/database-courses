@@ -9,11 +9,11 @@
 </head>
 
 <body>
-    <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
+    <header class="navbar sticky-top bg-success flex-md-nowrap p-0 shadow" data-bs-theme="success">
         <?php 
         session_start();
         ?> 
-        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#">Hola, <?php echo $_SESSION['name']; ?></a>
+        <h1 class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white pt-2">Materias</h1>
     </header>
     <div class="container-fluid">
         <div class="row">
@@ -26,7 +26,7 @@
                         <ul class="nav flex-column">
                             <li class="nav-item"> 
                                 <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="#"> 
-                                    Usuarios
+                                    Materias
                                 </a> 
                             </li>
                         </ul>
@@ -35,7 +35,7 @@
             </div>
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Usuarios <a href="insert.html" class="btn btn-primary"><i class="bi bi-plus-circle-dotted"></i></a></h1>
+                    <h1 class="h2">Materias <a href="insert.html" class="btn btn-primary"><i class="bi bi-plus-circle-dotted"></i></a></h1>
                 </div>
                 <div class="table-responsive small">
                     <table class="table table-striped table-sm">
@@ -43,15 +43,15 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Nombre</th>
-                                <th scope="col">Telefono</th>
-                                <th scope="col">Correo electronico</th>
+                                <th scope="col">Cuatrimestre</th>
+                                <th scope="col">Color</th>
                                 <th scope="col">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php 
                             require_once '../../lib/connection.php';
-                            $query = "SELECT * FROM users";
+                            $query = "SELECT * FROM courses";
                             $result = $conexion -> query($query);
                             if($result -> num_rows == 0){
                             ?> 
@@ -64,12 +64,12 @@
                             while ($row = $result -> fetch_object()){
                             ?>
                                 <tr> 
-                                    <td><?php echo $row -> id; ?></td>
-                                    <td><?php echo $row -> name; ?></td>
-                                    <td><?php echo $row -> phone; ?></td>
-                                    <td><?php echo $row -> email; ?></td>
+                                    <td><?php echo $row -> IDcourses; ?></td>
+                                    <td><?php echo $row -> Name; ?></td>
+                                    <td><?php echo $row -> Period; ?></td>
+                                    <td><?php echo $row -> Color; ?></td>
                                     <td>
-                                        <a href="update_form.php?id=<?php  echo $row -> id; ?>" class="btn btn-warning"><i class="bi bi-exposure"></i></a>
+                                        <a href="update_form.php?IDcourses=<?php  echo $row -> IDcourses; ?>" class="btn btn-warning"><i class="bi bi-exposure"></i></a>
                                         <a href="confirm.php?id=<?php echo $row -> id; ?>" class="btn btn-danger"><i class="bi bi-file-x-fill"></i></a>
                                     </td>
                                 </tr>

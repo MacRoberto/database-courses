@@ -1,3 +1,12 @@
+<?php
+require_once '../../lib/connection.php';
+
+$IDcourses = $_GET['IDcourses'];
+$query = "SELECT * FROM courses WHERE IDcourses = $IDcourses";
+$result = $conexion -> query($query);
+$record = $result ->fetch_object();
+
+?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="auto">
 
@@ -9,8 +18,8 @@
 </head>
 
 <body>
-    <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark"> 
-        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#">Company name</a>
+    <header class="navbar sticky-top bg-success flex-md-nowrap p-0 shadow" data-bs-theme="success"> 
+    <h1 class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white pt-2">Materias</h1>
     </header>
     <div class="container-fluid">
         <div class="row">
@@ -22,8 +31,8 @@
                     <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
                         <ul class="nav flex-column">
                             <li class="nav-item"> 
-                                <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="../users/"> 
-                                    Usuarios
+                                <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="../subjects/"> 
+                                    Materias
                                 </a> 
                             </li>
                         </ul>
@@ -34,30 +43,31 @@
                 
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                  
-                    <h1 class="h2">Usuarios</h1>
+                    <h1 class="h2">Materia </h1>
                 
                 </div>
                
                 <div class="form">
-                    <form action="insert_user.php" method="post">
+                    <form action="update_user.php" method="post">
 
                         <div class="mb-3">
                             <label for="" class="form-label">Nombre</label>
-                            <input type="text" class="form-control form-control-md" placeholder="Escribe tu nombre" name="name">
+                            <input type="text" class="form-control form-control-md" placeholder="Escribe el Nombre" name="Name" value="<?php echo $record-> Name;?>">
                         </div>
 
                         <div class="mb-3">
-                            <label for="" class="form-label">Telefono</label>
-                            <input type="text" class="form-control form-control-md" placeholder="Escribe tu Telefono" name="phone">
+                            <label for="" class="form-label">Cuatrimestre</label>
+                            <input type="text" class="form-control form-control-md" placeholder="Escribe el Cuatrimestre" name="Period" value="<?php echo $record-> Period;?>">
                         </div>
                         
                         <div class="mb-3">
-                            <label for="" class="form-label">Correo</label>
-                            <input type="text" class="form-control form-control-md" placeholder="Escribe tu Correo" name="email">
+                            <label for="" class="form-label">Color</label>
+                            <input type="text" class="form-control form-control-md" placeholder="Escribe el Color" name="Color" value="<?php echo $record-> Color;?>">
+                            <input type="hidden" name="IDcourses" value="<?php echo $IDcourses;?>">
                         </div>
 
                         <div class="mb-3">
-                            <input type="submit" class="btn btn-success btn-lg" value="Guardar">
+                            <input type="submit" class="btn btn-success btn-lg" value="Editar">
                         </div>
 
                     </form>
