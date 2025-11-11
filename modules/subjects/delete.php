@@ -1,8 +1,8 @@
 <?php
 require_once '../../lib/connection.php';
-$id = $_GET['id'];
-$query = "DELETE FROM users WHERE id = $id";
+$IDcourses = $_GET['IDcourses'];
+$query = "DELETE FROM courses WHERE IDcourses = $IDcourses";
 $conexion ->query($query);
-header("Location: ./");
+header("Location: ./");
 
 ?>

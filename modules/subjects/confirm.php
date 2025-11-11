@@ -1,7 +1,7 @@
 <?php
 require_once '../../lib/connection.php';
-$id = $_GET['id'];
-$query = "SELECT * FROM users WHERE id = $id";
+$IDcourses = $_GET['IDcourses'];
+$query = "SELECT * FROM courses WHERE IDcourses = $IDcourses";
 $conexion ->query($query);
 ?>
 
@@ -19,10 +19,10 @@ $conexion ->query($query);
         <h2 style="color: white;">¿DESEAS ELIMINAR EL REGISTRO?</h2>
         <div class="row mt-5 justify-content-between text-center">
             <div class="col">
-                <a href="delete.php?id=<?php echo $id; ?>" class="btn btn-success">Si, eliminar</a>
+                <a href="delete.php?IDcourses=<?php echo $IDcourses; ?>" class="btn btn-success">Si, eliminar</a>
             </div>
             <div class="col">
-                <a href="../users/" class="btn btn-danger">No, Regresar</a>
+                <a href="../subjects/" class="btn btn-danger">No, Regresar</a>
             </div>
         </div>
     </div>
