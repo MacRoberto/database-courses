@@ -19,7 +19,7 @@ $record = $result ->fetch_object();
 
 <body>
     <header class="navbar sticky-top bg-success flex-md-nowrap p-0 shadow" data-bs-theme="success"> 
-    <h1 class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white pt-2">Materias</h1>
+    <h1 class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-3 text-white pt-2 ">Materias</h1>
     </header>
     <div class="container-fluid">
         <div class="row">
@@ -43,7 +43,7 @@ $record = $result ->fetch_object();
                 
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                  
-                    <h1 class="h2">Materia </h1>
+                    <h1 class="h2 text-uppercase">Editar Materia </h1>
                 
                 </div>
                
@@ -68,6 +68,7 @@ $record = $result ->fetch_object();
 
                         <div class="mb-3">
                             <input type="submit" class="btn btn-success btn-lg" value="Editar">
+                            <a href="../subjects/" class="btn btn-danger btn-lg">Regresar</a>
                         </div>
 
                     </form>

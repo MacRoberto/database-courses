@@ -13,7 +13,7 @@
         <?php 
         session_start();
         ?> 
-        <h1 class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white pt-2">Materias</h1>
+        <h1 class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-3 text-white pt-2">Mtro. Josue</h1>
     </header>
     <div class="container-fluid">
         <div class="row">
@@ -35,7 +35,7 @@
             </div>
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Materias <a href="insert.html" class="btn btn-primary"><i class="bi bi-plus-circle-dotted"></i></a></h1>
+                    <h1 class="h2 text-uppercase">Materias<a href="insert.html" class="btn btn-primary mx-2 mb-2"><i class="bi bi-journal-plus"></i></a></h1>
                 </div>
                 <div class="table-responsive small">
                     <table class="table table-striped table-sm">
@@ -64,13 +64,13 @@
                             while ($row = $result -> fetch_object()){
                             ?>
                                 <tr> 
-                                    <td><?php echo $row -> IDcourses; ?></td>
-                                    <td><?php echo $row -> Name; ?></td>
-                                    <td><?php echo $row -> Period; ?></td>
-                                    <td><?php echo $row -> Color; ?></td>
+                                    <td class="fw-bold"><?php echo $row -> IDcourses; ?></td>
+                                    <td class="fw-bold"><?php echo $row -> Name; ?></td>
+                                    <td class="fw-semibold mx-5"><?php echo $row -> Period; ?></td>
+                                    <td class="fw-semibold"><?php echo $row -> Color; ?></td>
                                     <td>
-                                        <a href="update_form.php?IDcourses=<?php  echo $row -> IDcourses; ?>" class="btn btn-warning"><i class="bi bi-exposure"></i></a>
-                                        <a href="confirm.php?id=<?php echo $row -> id; ?>" class="btn btn-danger"><i class="bi bi-file-x-fill"></i></a>
+                                        <a href="update_form.php?IDcourses=<?php  echo $row -> IDcourses; ?>" class="btn btn-warning"><i class="bi bi-journal-code"></i></a>
+                                        <a href="confirm.php?IDcourses=<?php echo $row -> IDcourses; ?>" class="btn btn-danger"><i class="bi bi-journal-minus"></i></a>
                                     </td>
                                 </tr>
                             <?php
