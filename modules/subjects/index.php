@@ -13,7 +13,7 @@
         <?php 
         session_start();
         ?> 
-        <h1 class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-3 text-white pt-2">Mtro.</h1>
+        <h1 class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-3 text-white pt-2">Mtro. Pepito</h1>
     </header>
     <div class="container-fluid">
         <div class="row">
@@ -25,7 +25,7 @@
                     <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
                         <ul class="nav flex-column">
                             <li class="nav-item"> 
-                                <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="#"> 
+                                <a class="nav-link d-flex align-items-center gap-2 active bg-success text-white rounded-4" aria-current="page" href="#"> 
                                     Materias
                                 </a> 
                             </li>
